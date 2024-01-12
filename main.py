@@ -10,6 +10,8 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 auth = Auth.Token(GITHUB_TOKEN)
 g = Github(auth=auth)
 
+# print(g.get_rate_limit())  # check rate limit
+
 # Define Repo
 repo = g.get_repo("frank-xw/GitHub-Data-Pull")
 issue = repo.get_issues(state='all')[0]
